@@ -29,6 +29,7 @@
         <category android:name="android.intent.category.BROWSABLE"/>
         <data android:scheme="com.motekpayng.motekpayng"/>
         <data android:scheme="exp+toppay"/>
+        <data android:scheme="exp+motekpay"/>
       </intent-filter>
     </activity>
   </application>

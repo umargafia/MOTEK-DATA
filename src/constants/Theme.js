@@ -1,14 +1,17 @@
 import { Dimensions, Platform } from 'react-native';
+import { Appearance } from 'react-native';
 
 export const Theme = () => {
   return {
     palette: {
-      primary: '#003689',
-      secondary: '#900eca',
-      white: '#fefefe',
+      primary: '#f80000',
+      secondary: '#6D0404FF',
+      white: '#fff',
       black: '#424242',
       red: '#c5221f',
       link: '#486be8',
+      gray: '#e0e0e0',
+      grayDark: 'gray',
     },
 
     window: {
@@ -16,7 +19,7 @@ export const Theme = () => {
       windowHeight: Dimensions.get('window').height,
     },
     shadow: {
-      elevation: 4,
+      elevation: 2,
       shadowColor: 'rgba(0, 0, 0, 0.5)',
       shadowOffset: {
         width: 0,
@@ -37,5 +40,6 @@ export const Theme = () => {
     },
     font: {},
     os: Platform.OS,
+    appName: 'Motek Pay',
   };
 };
