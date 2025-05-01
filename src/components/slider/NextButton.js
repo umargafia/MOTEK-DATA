@@ -2,11 +2,10 @@ import { TouchableOpacity, StyleSheet, View } from 'react-native';
 import React, { useEffect, useRef, useState } from 'react';
 
 import MyIcon from '../global/MyIcon';
-import { SlidesList } from '../../constant/SliderList';
-import { Theme } from '../../constant/Theme';
+import { SlidesList } from '../../constants/SliderList';
+import { Theme } from '../../constants/Theme';
 import { useNavigation } from '@react-navigation/native';
 import MyButton from '../global/Mybutton';
-import { saveEncryptedData } from '../../constant/SaveData';
 
 const theme = Theme();
 const NextButton = ({ percentage, scrollRef }) => {
@@ -21,7 +20,7 @@ const NextButton = ({ percentage, scrollRef }) => {
     }
   }, [percentage]);
 
-  const handleNextPress = async () => {
+  const handleNextPress = () => {
     if (percentage < 100 && scrollRef.current) {
       const totalListItems = SlidesList.length;
       const scrollToIndex = Math.floor((percentage / 100) * totalListItems);
@@ -31,7 +30,6 @@ const NextButton = ({ percentage, scrollRef }) => {
       });
     } else {
       navigation.replace('welcomePage');
-      await saveEncryptedData();
     }
   };
 
@@ -40,7 +38,7 @@ const NextButton = ({ percentage, scrollRef }) => {
       {isLast === false ? (
         <TouchableOpacity style={styles.button} onPress={handleNextPress}>
           <MyIcon
-            name="ios-arrow-forward"
+            name="arrow-forward-outline"
             size={30}
             color={theme.palette.white}
           />

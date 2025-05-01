@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "MOTEK DATA",
-    "slug": "MOTEKDATA",
-    "version": "3.0.0",
+    "name": "Motek Pay",
+    "slug": "motekpay",
+    "version": "5.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -15,23 +15,56 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.motekpayng.motekpayng"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.motekdata.motekdata",
-      "versionCode": 3
+      "package": "com.motekpayng.motekpayng",
+      "versionCode": 5
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "extra": {
-      "eas": {
-        "projectId": "8aaba98e-149c-4d21-be86-2a204fad7136"
+    "expo.modules": [
+      {
+        "name": "expo-document-picker",
+        "version": "11.2.2"
       }
-    }
+    ],
+    "extra": {
+      "oneSignalAppId": "a8a89b80-6e5a-43cb-b00e-7998832a5126",
+      "eas": {
+        "build": {
+          "experimental": {
+            "ios": {
+              "appExtensions": [
+                {
+                  "targetName": "OneSignalNotificationServiceExtension",
+                  "bundleIdentifier": "com.motekpayng.motekpayng.OneSignalNotificationServiceExtension",
+                  "entitlements": {
+                    "com.apple.security.application-groups": [
+                      "group.com.motekpayng.motekpayng.onesignal"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "projectId": "f65a56f4-3705-4722-b529-986b9649f6d0"
+      }
+    },
+    "plugins": [
+      [
+        "onesignal-expo-plugin",
+        {
+          "mode": "production"
+        }
+      ]
+    ]
   }
 }
