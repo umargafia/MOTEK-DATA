@@ -2,7 +2,7 @@
   "expo": {
     "name": "Motek Pay",
     "slug": "motekpay",
-    "version": "5.0.0",
+    "version": "2.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -11,9 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.motekpayng.motekpayng"
@@ -24,7 +22,7 @@
         "backgroundColor": "#ffffff"
       },
       "package": "com.motekpayng.motekpayng",
-      "versionCode": 5
+      "versionCode": 3
     },
     "web": {
       "favicon": "./assets/favicon.png"
